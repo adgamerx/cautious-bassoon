@@ -1,0 +1,50 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Talkover: argue without a shared language</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400;12..96,600;12..96,800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<header>
+  <h1>Talkover</h1>
+  <p>Argue in your own language. The other person reads and hears you in theirs, even while you interrupt each other.</p>
+</header>
+<main>
+  <section id="home">
+    <div class="row"><label>My language <select id="myLang"></select></label></div>
+    <div class="row" id="startBtns">
+      <button id="startRoom">Start a room</button>
+      <button id="solo" class="ghost">Try it solo on one screen</button>
+    </div>
+    <div class="row" id="join" hidden><button id="joinBtn">Join the argument</button></div>
+    <p class="hint">Start a room, send the link to the other person, and each of you opens it on your own phone. Mic input needs Chrome or Edge. Typing works everywhere.</p>
+  </section>
+
+  <section id="app" hidden>
+    <div class="heatlabel"><span>Person A</span><span>Temperature</span><span>Person B</span></div>
+    <div class="heat" aria-hidden="true"><i id="hA"></i><i id="hB"></i></div>
+    <div id="panels"></div>
+    <div class="row" id="netbar" hidden>
+      <button id="mic">Start mic</button>
+      <label><input type="checkbox" id="speak" checked> Read translations aloud</label>
+      <span id="status">Setting up...</span>
+    </div>
+    <div class="row" id="linkrow" hidden>
+      <span id="link"></span><button id="copy" class="ghost">Copy link</button>
+    </div>
+    <div class="row" id="solobar" hidden>
+      <button id="sample">Play a sample argument (Hindi vs Spanish)</button>
+      <button id="clear" class="ghost">Clear</button>
+      <span class="hint">Or type in either box. Text translates on the other side as you type.</span>
+    </div>
+  </section>
+</main>
+
+<script src="https://unpkg.com/peerjs@1.5.4/dist/peerjs.min.js"></script>
+<script src="script.js"></script>
+</body>
+</html>
